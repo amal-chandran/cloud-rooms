@@ -16,3 +16,12 @@
 const Route = use('Route')
 
 Route.get('/', () => 'Hello world')
+
+Route
+  .get('users/:id', 'UserController.show')
+  .middleware('auth')
+
+Route.post('login', 'UserController.login')
+
+
+Route.post('signup', 'UserController.signup')
